@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entries</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">All Posts</h1>
+        <% if (posts.length !== 0) { %>
+            <% for (let i = 0; i < posts.length; i++){ %>
+                <div class="post-entry">
+                    <h2 class="post-title">Title: <%= posts[i].title %></h2> 
+                    <p class="post-content"><%= posts[i].content %></p>
+                    <p class="post-author">Author: <%= posts[i].author %></p>
+                    <p class="post-author">Time Submitted: <%= posts[i].created_at %></p>
+                    <hr>
+                </div>
+            <% } %> 
+        <% } else { %>
+            <h2 class="no-title">No posts found!</p> 
+        <% } %>
+        <a class="link-button" href="/home">Create a new Post</a>
+    </div>
+</body>
+</html> 

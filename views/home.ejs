@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Create a New Post</h1>
+        <form method="POST" action="/submit">
+            <input class="input-field" type="text" name="author" placeholder="Your Name" value="<%= data.name %>">
+            <br>
+            <input class="input-field" type="text" name="title" placeholder="Post Title"  value="<%= data.title %>">
+            <br>
+            <textarea class="input-field" name="content" placeholder="Write your post here..."><%= data.content %></textarea>
+            <br>
+            <% if (errors) { %>
+                <% errors.forEach((error) => { %>
+                    <p class="errors"><%= error %></p>
+            <% }); %>
+            <% } %>
+            <button class="submit-button" type="submit">Submit</button>
+        </form>
+    </div>  
+</body>
+</html> 
